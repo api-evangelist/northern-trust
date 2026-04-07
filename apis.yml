@@ -1,7 +1,12 @@
 aid: northern-trust
-url: https://raw.githubusercontent.com/api-evangelist/northern-trust/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/northern-trust/refs/heads/main/apis.yml
 modified: '2026-03-21'
 apis: []
 common:
   - type: Website
     url: https://www.northern-trust.com
+description: >-
+  Northern Trust is a leading provider of wealth management, asset servicing, asset
+  management, and banking services to corporations, institutions, families, and individuals
+  worldwide.
