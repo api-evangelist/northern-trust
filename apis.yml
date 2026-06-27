@@ -31,7 +31,7 @@ common:
     url: https://www.linkedin.com/company/northern-trust
   - type: Website
     url: https://www.northerntrust.com
-  - type: Developer Portal
+  - type: DeveloperPortal
     url: https://developer.ntrs.com/
 maintainers:
   - FN: API Evangelist
