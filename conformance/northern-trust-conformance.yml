@@ -1,0 +1,40 @@
+generated: '2026-07-23'
+method: searched
+source: >-
+  Okta OIDC discovery documents at login.ntrs.com/oauth2/aus1m4yuzpqNFht7o0h8
+  (openid-configuration + oauth-authorization-server) + portal review
+notes: >-
+  Conformance is asserted only for standards evidenced by the anonymous discovery
+  metadata. Compliance certifications (SOC 2, ISO 27001, PCI DSS, etc.) are not
+  published on the first-party developer portal, so no compliance program is
+  asserted here.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: RFC 6749 authorization_code + refresh_token grants advertised by the authorization server metadata
+- id: oidc
+  conforms: true
+  evidence: OpenID Connect issuer, id_token (RS256), userinfo_endpoint and standard claims published
+- id: oidc-discovery
+  conforms: true
+  evidence: /.well-known/openid-configuration served with a full provider metadata document
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200 with authorization-server metadata
+- id: rfc7636-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256
+- id: private-key-jwt-client-auth
+  conforms: true
+  evidence: token_endpoint_auth_methods_supported includes private_key_jwt (RFC 7523)
+- id: fapi
+  conforms: unverified
+  evidence: >-
+    PKCE (S256) and private_key_jwt are present (FAPI building blocks), but no
+    FAPI profile conformance is claimed or certified by the provider
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: API error envelope not observable — gateway responses are behind partner auth
+- id: fdx
+  conforms: false
+  evidence: no public FDX participation documented on the first-party portal (consumer access is aggregator-mediated)

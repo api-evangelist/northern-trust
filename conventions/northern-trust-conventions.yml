@@ -1,0 +1,37 @@
+generated: '2026-07-23'
+method: derived
+source: >-
+  Okta OIDC discovery + apis.yml gateway base URL + developer.ntrs.com review
+  (per-operation request/response semantics are behind partner registration)
+notes: >-
+  Only the cross-cutting semantics observable without registered credentials are
+  recorded. Idempotency, pagination, request-id tracing, and the error-envelope
+  shape are documented inside the gated portal reference and were not
+  harvestable, so they are marked unknown rather than guessed. No Idempotency
+  pointer is emitted because no idempotency contract is observable.
+authentication:
+  style: oauth2-bearer
+  detail: Bearer access token from Okta authorization_code + PKCE (S256)
+  ref: authentication/northern-trust-authentication.yml
+versioning:
+  style: uri-path
+  current: v1
+  base: https://apiservices.ntrs.com/ent/v1
+idempotency:
+  supported: unknown
+pagination:
+  style: unknown
+request_tracing:
+  header: unknown
+rate_limiting:
+  signaling: unknown
+error_envelope:
+  shape: unknown
+  observed: >-
+    Unauthenticated gateway probes return {"error":"Unauthorized","code":"3000x"}
+    and {"error":"Invalid API Key"} — a JSON {error, code} envelope at the gateway
+    edge, but the in-product error contract is not public.
+cross_links:
+  authentication: authentication/northern-trust-authentication.yml
+  scopes: scopes/northern-trust-scopes.yml
+  lifecycle: lifecycle/northern-trust-lifecycle.yml

@@ -1,0 +1,22 @@
+generated: '2026-07-23'
+method: derived
+source: apis.yml baseURL + developer.ntrs.com portal review
+notes: >-
+  Northern Trust does not publish a public status page, deprecation policy, or
+  SLA on the first-party developer portal (all operational governance sits behind
+  partner registration). status.ntrs.com and status.northerntrust.com do not
+  resolve; developer.ntrs.com/status returns the SPA shell, not a status page.
+  Only the versioning scheme is observable — the enterprise gateway path carries
+  a v1 URI segment.
+versioning:
+  scheme: uri-path
+  current: v1
+  evidence: gateway base URL https://apiservices.ntrs.com/ent/v1
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+deprecated_operations: []

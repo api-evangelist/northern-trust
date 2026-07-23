@@ -1,0 +1,58 @@
+generated: '2026-07-23'
+method: searched
+source: >-
+  https://login.ntrs.com/oauth2/aus1m4yuzpqNFht7o0h8/.well-known/openid-configuration
+  (scopes_supported, live Okta OIDC discovery)
+docs: https://developer.ntrs.com/get-started
+notes: >-
+  Scopes are read verbatim from the custom Okta authorization server's
+  scopes_supported. Northern Trust does not publish a public scope-reference page
+  (the developer portal is gated), so descriptions for the provider-defined
+  scopes are inferred conservatively and marked as such; the standard OIDC scopes
+  use their RFC-defined meaning. Okta platform scopes (okta.myAccount.*) are the
+  identity-provider's own account scopes, not API-Store product scopes, and are
+  omitted here.
+schemes:
+- name: NorthernTrustOIDC
+  source: well-known/northern-trust-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://login.ntrs.com/oauth2/aus1m4yuzpqNFht7o0h8/v1/authorize
+    tokenUrl: https://login.ntrs.com/oauth2/aus1m4yuzpqNFht7o0h8/v1/token
+scopes:
+- scope: openid
+  description: OpenID Connect — issue an ID token identifying the authenticated principal.
+  standard: true
+- scope: profile
+  description: Access to the principal's basic profile claims (name, etc.).
+  standard: true
+- scope: email
+  description: Access to the principal's email address claim.
+  standard: true
+- scope: address
+  description: Access to the principal's address claim.
+  standard: true
+- scope: phone
+  description: Access to the principal's phone-number claim.
+  standard: true
+- scope: offline_access
+  description: Issue a refresh token so the client can obtain new access tokens without re-prompting.
+  standard: true
+- scope: device_sso
+  description: Okta device single-sign-on scope enabling native SSO across device apps.
+  standard: true
+- scope: api.read
+  description: >-
+    Provider-defined. Read access to the Northern Trust API Store resources
+    exposed through the enterprise gateway. (Inferred — no public gloss.)
+  standard: false
+- scope: aor.role
+  description: >-
+    Provider-defined role/entitlement scope carried on the access token to convey
+    the caller's authorized role for API-Store access. (Inferred — no public gloss.)
+  standard: false
+- scope: interclient_access
+  description: >-
+    Provider-defined scope authorizing cross-client / delegated access between
+    registered client applications. (Inferred — no public gloss.)
+  standard: false

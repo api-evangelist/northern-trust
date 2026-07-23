@@ -1,0 +1,42 @@
+# Northern Trust
+
+> Northern Trust is a Fortune 500 global financial services firm providing asset servicing, asset management, wealth management, and banking to institutions, corporations, family offices, and individuals worldwide. Its first-party developer program — the Northern Trust API Store at developer.ntrs.com — exposes asset-servicing capabilities as REST APIs across custody, fund accounting, transfer agency, middle office, data management, and risk & performance, plus an event-notification service. Product domains are publicly browsable; API reference specifications and live access are gated behind Okta OIDC (authorization code + PKCE) partner registration.
+
+## APIs
+
+- [Custody API](https://developer.ntrs.com/apis): Global custody data — holdings, positions, safekept assets, settlements.
+- [Fund Accounting API](https://developer.ntrs.com/apis): Book-of-record accounting, valuations, income/expenses, NAV servicing.
+- [Transfer Agency API](https://developer.ntrs.com/apis): Shareholder registers, investor transactions, subscriptions/redemptions.
+- [Middle Office API](https://developer.ntrs.com/apis): Trade lifecycle, post-trade processing, position keeping, reconciliation.
+- [Data Management API](https://developer.ntrs.com/apis): Investment book of record, aggregated holdings, reference & market data.
+- [Risk and Performance API](https://developer.ntrs.com/apis): Performance returns, attribution, benchmarks, risk analytics.
+- [Event Notification API](https://developer.ntrs.com/events): Asynchronous event/webhook notifications across custody and servicing data.
+
+## Authentication
+
+- [OIDC discovery](https://login.ntrs.com/oauth2/aus1m4yuzpqNFht7o0h8/.well-known/openid-configuration): Okta authorization server; Authorization Code + PKCE (S256); private_key_jwt supported.
+- Business scopes: `api.read`, `aor.role`, `interclient_access` (plus standard OIDC scopes).
+- Gateway base URL: `https://apiservices.ntrs.com/ent/v1` (Bearer access token required).
+
+## Docs
+
+- [Developer Portal](https://developer.ntrs.com/): Northern Trust API Store.
+- [Get Started](https://developer.ntrs.com/get-started): Registration and onboarding.
+- [Events](https://developer.ntrs.com/events): Event notification service.
+- [Insights & Research](https://www.northerntrust.com/united-states/insights-research): Blog / research.
+
+## Artifacts
+
+- [Authentication profile](authentication/northern-trust-authentication.yml)
+- [OAuth scopes](scopes/northern-trust-scopes.yml)
+- [Conformance](conformance/northern-trust-conformance.yml)
+- [Well-known discovery](well-known/northern-trust-well-known.yml)
+- [Lifecycle](lifecycle/northern-trust-lifecycle.yml)
+- [Conventions](conventions/northern-trust-conventions.yml)
+- [Event/webhook surface](asyncapi/northern-trust-event-notification-webhooks.yml)
+- [Domain security](security/northern-trust-domain-security.yml)
+
+## Notes
+
+- No public OpenAPI/Swagger: the portal is a client-rendered SPA and the enterprise gateway rejects unauthenticated requests; specs download only after Okta registration.
+- No public consumer open-banking / CFPB-1033 API — retail account connectivity is aggregator-mediated.

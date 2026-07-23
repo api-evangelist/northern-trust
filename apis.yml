@@ -211,6 +211,8 @@ apis:
     url: https://developer.ntrs.com/events
   - type: Documentation
     url: https://developer.ntrs.com/get-started
+  - type: Webhooks
+    url: asyncapi/northern-trust-event-notification-webhooks.yml
 common:
 - type: Website
   url: https://www.northerntrust.com
@@ -236,6 +238,20 @@ common:
   url: https://www.linkedin.com/company/northern-trust
 - type: DomainSecurity
   url: security/northern-trust-domain-security.yml
+- type: Authentication
+  url: authentication/northern-trust-authentication.yml
+- type: OAuthScopes
+  url: scopes/northern-trust-scopes.yml
+- type: Conformance
+  url: conformance/northern-trust-conformance.yml
+- type: WellKnown
+  url: well-known/northern-trust-well-known.yml
+- type: Lifecycle
+  url: lifecycle/northern-trust-lifecycle.yml
+- type: Conventions
+  url: conventions/northern-trust-conventions.yml
+- type: LLMsTxt
+  url: llms/northern-trust-llms.txt
 maintainers:
 - FN: API Evangelist
   email: info@apievangelist.com

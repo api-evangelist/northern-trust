@@ -1,0 +1,21 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.ntrs.com/events (Northern Trust API Store event-notification product)
+spec_type: Webhooks
+notes: >-
+  Northern Trust publishes an Event Notification service in the API Store — an
+  asynchronous, event-driven layer that lets registered clients subscribe to and
+  receive notifications about events across their custody and asset-servicing
+  data, complementing the request/response APIs. The product domain is publicly
+  advertised; the concrete event catalog, payload schemas, and subscription
+  management sit behind Okta partner registration, so no AsyncAPI document or
+  per-event schema is harvestable. This artifact records the advertised webhook /
+  event surface only — no channels or message schemas are fabricated.
+service:
+  name: Northern Trust Event Notification API
+  humanURL: https://developer.ntrs.com/events
+  baseURL: https://apiservices.ntrs.com/ent/v1
+  delivery: event-notification / webhook (subscribe-and-receive)
+  gated: true
+channels: []
+messages: []

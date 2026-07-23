@@ -1,0 +1,48 @@
+generated: '2026-07-23'
+method: searched
+source: live probes of /.well-known/ across ntrs.com hosts
+notes: >-
+  developer.ntrs.com is a client-rendered SPA that returns the index.html shell
+  (HTTP 200) for every /.well-known/ and /openapi.json path, so none of those are
+  real documents. The genuine discovery surface is the Okta identity provider at
+  login.ntrs.com, whose custom authorization server (aus1m4yuzpqNFht7o0h8) fronts
+  the Northern Trust API Store. No security.txt is published — the corporate
+  www.northerntrust.com/.well-known/security.txt 302-redirects to a 404.
+hosts:
+- host: https://login.ntrs.com/oauth2/aus1m4yuzpqNFht7o0h8
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: northern-trust-openid-configuration.json
+    kind: openid-connect-discovery
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: northern-trust-oauth-authorization-server.json
+    kind: rfc8414-oauth-authorization-server-metadata
+- host: https://login.ntrs.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    kind: openid-connect-discovery
+    note: org-level Okta OIDC metadata (not saved; the custom API authorization server above is the API-facing one)
+- host: https://developer.ntrs.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: SPA index.html shell, not a real document
+  - path: /.well-known/security.txt
+    status: 200
+    note: SPA index.html shell, not a real document
+  - path: /openapi.json
+    status: 200
+    note: SPA index.html shell, not a real spec
+- host: https://www.northerntrust.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+    note: redirects to /page-not-found (no security.txt published)
+- host: https://apiservices.ntrs.com
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 500
+    note: enterprise gateway rejects the request
