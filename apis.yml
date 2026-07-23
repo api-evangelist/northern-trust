@@ -1,40 +1,241 @@
 aid: northern-trust
 name: Northern Trust
-description: >-
-  Northern Trust is a Fortune 500 financial services company providing wealth
-  management, asset servicing, asset management, and banking services to
-  corporations, institutions, families, and individuals worldwide. Northern
-  Trust operates a developer API Store for partners, but no public OpenAPI
-  specifications are openly distributed; access requires registration on the
-  developer portal.
+kind: company
 type: Index
+description: >-
+  Northern Trust is a Fortune 500 global financial services firm providing asset
+  servicing, asset management, wealth management, and banking to corporations,
+  institutions, family offices, and individuals worldwide. Its first-party
+  developer program, the Northern Trust API Store at developer.ntrs.com, exposes
+  asset-servicing capabilities as REST APIs across custody, fund accounting,
+  transfer agency, middle office, data management, and risk and performance,
+  plus an event-notification service. The catalog is a partner/registration
+  surface: browsing product domains is public, but API reference specifications
+  (downloadable as spec.json) and live access sit behind Okta-based OIDC login.
+  Northern Trust does not publish a public consumer open-banking API; retail
+  account connectivity is reached indirectly through data aggregators.
+accessModel:
+  pricing: unknown
+  onboarding: partner
+  trial: false
+  try_now: false
+  public: false
+  label: Partner · Registration required (Okta OIDC)
+  confidence: medium
+  source:
+  - authentication
+  - developer-portal
+  generated: '2026-07-23'
+  method: derived
 position: Producer
 access: Partner
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/northern-trust.png
 tags:
-  - Fortune 500
-  - Banking
-  - Wealth Management
-  - Asset Servicing
-  - Asset Management
-  - Financial Services
+- Fortune 500
+- Banking
+- Wealth Management
+- Asset Servicing
+- Asset Management
+- Financial Services
+- United States
 url: >-
   https://raw.githubusercontent.com/api-evangelist/northern-trust/refs/heads/main/apis.yml
 created: '2026-03-21'
-modified: '2026-04-28'
+modified: '2026-07-23'
 specificationVersion: '0.19'
-apis: []
-common:
-  - type: DomainSecurity
-    url: security/northern-trust-domain-security.yml
-  - type: GitHubOrganization
-    url: https://github.com/northern-trust
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/northern-trust
-  - type: Website
-    url: https://www.northerntrust.com
+apis:
+- aid: northern-trust:custody-api
+  name: Northern Trust Custody API
+  description: >-
+    The Custody API in the Northern Trust API Store gives institutional clients
+    programmatic access to global custody data — holdings, positions, safekept
+    assets, settlements, and account-level custody information across Northern
+    Trust's global custody network. It is part of Northern Trust's asset-servicing
+    API family and is served through the enterprise API gateway. Full request and
+    response reference is published as a downloadable specification inside the
+    portal after Okta-based registration; the product landing and domain
+    description are publicly browsable.
+  humanURL: https://developer.ntrs.com/apis
+  baseURL: https://apiservices.ntrs.com/ent/v1
+  tags:
+  - United States
+  - Asset Servicing
+  - Custody
+  - Securities Services
+  - Institutional
+  properties:
   - type: DeveloperPortal
-    url: https://developer.ntrs.com/
+    url: https://developer.ntrs.com/apis
+  - type: Documentation
+    url: https://developer.ntrs.com/get-started
+- aid: northern-trust:fund-accounting-api
+  name: Northern Trust Fund Accounting API
+  description: >-
+    The Fund Accounting API exposes Northern Trust's fund accounting and net
+    asset value (NAV) servicing data to institutional and fund clients — book of
+    record accounting, valuations, income, expenses, and NAV-related datasets
+    that support registered and unregistered fund administration. It is one of
+    the asset-servicing domains published in the Northern Trust API Store and is
+    delivered through the enterprise API gateway. The detailed API reference is
+    downloadable as a specification to registered, Okta-authenticated portal
+    users; the domain is publicly listed in the catalog.
+  humanURL: https://developer.ntrs.com/apis
+  baseURL: https://apiservices.ntrs.com/ent/v1
+  tags:
+  - United States
+  - Asset Servicing
+  - Fund Accounting
+  - Fund Services
+  - NAV
+  properties:
+  - type: DeveloperPortal
+    url: https://developer.ntrs.com/apis
+  - type: Documentation
+    url: https://developer.ntrs.com/get-started
+- aid: northern-trust:transfer-agency-api
+  name: Northern Trust Transfer Agency API
+  description: >-
+    The Transfer Agency API provides programmatic access to Northern Trust's
+    transfer agency servicing — shareholder registers, investor transactions,
+    subscriptions and redemptions, dealing, and related transfer-agency records
+    supporting fund distribution. It is part of the asset-servicing catalog in
+    the Northern Trust API Store and runs on the enterprise API gateway.
+    Machine-readable API reference is available as a downloadable specification
+    to Okta-authenticated portal users, while the product domain itself is
+    publicly browsable.
+  humanURL: https://developer.ntrs.com/apis
+  baseURL: https://apiservices.ntrs.com/ent/v1
+  tags:
+  - United States
+  - Asset Servicing
+  - Transfer Agency
+  - Fund Services
+  - Investor Servicing
+  properties:
+  - type: DeveloperPortal
+    url: https://developer.ntrs.com/apis
+  - type: Documentation
+    url: https://developer.ntrs.com/get-started
+- aid: northern-trust:middle-office-api
+  name: Northern Trust Middle Office API
+  description: >-
+    The Middle Office API surfaces Northern Trust's whole-office and middle-office
+    outsourcing data — trade lifecycle, post-trade processing, position keeping,
+    reconciliation, and investment operations datasets that support the firm's
+    front-, middle- and back-office asset-servicing offering. It is one of the
+    domains published in the Northern Trust API Store and is served via the
+    enterprise API gateway. The full API reference is downloadable as a
+    specification to registered, Okta-authenticated users; the domain landing is
+    publicly listed in the catalog.
+  humanURL: https://developer.ntrs.com/apis
+  baseURL: https://apiservices.ntrs.com/ent/v1
+  tags:
+  - United States
+  - Asset Servicing
+  - Middle Office
+  - Investment Operations
+  - Institutional
+  properties:
+  - type: DeveloperPortal
+    url: https://developer.ntrs.com/apis
+  - type: Documentation
+    url: https://developer.ntrs.com/get-started
+- aid: northern-trust:data-management-api
+  name: Northern Trust Data Management API
+  description: >-
+    The Data Management API delivers consolidated investment and reference data
+    from Northern Trust's data services — investment book of record, aggregated
+    holdings, reference and market data, and cross-domain datasets that let
+    clients pull their custody and servicing data into their own systems. It is a
+    core domain of the Northern Trust API Store and is delivered through the
+    enterprise API gateway. Detailed API reference is provided as a downloadable
+    specification to Okta-authenticated portal users; the domain is publicly
+    browsable in the catalog.
+  humanURL: https://developer.ntrs.com/apis
+  baseURL: https://apiservices.ntrs.com/ent/v1
+  tags:
+  - United States
+  - Asset Servicing
+  - Data Management
+  - Investment Data
+  - Reporting
+  properties:
+  - type: DeveloperPortal
+    url: https://developer.ntrs.com/apis
+  - type: Documentation
+    url: https://developer.ntrs.com/get-started
+- aid: northern-trust:risk-and-performance-api
+  name: Northern Trust Risk and Performance API
+  description: >-
+    The Risk and Performance API exposes Northern Trust's investment risk and
+    performance measurement data — performance returns, attribution, benchmarks,
+    and risk analytics produced by the firm's performance and analytics
+    servicing. It is one of the asset-servicing domains in the Northern Trust API
+    Store and is served through the enterprise API gateway. The full API
+    reference is available as a downloadable specification to registered,
+    Okta-authenticated portal users, and the product domain is publicly listed in
+    the catalog.
+  humanURL: https://developer.ntrs.com/apis
+  baseURL: https://apiservices.ntrs.com/ent/v1
+  tags:
+  - United States
+  - Asset Servicing
+  - Risk
+  - Performance Measurement
+  - Analytics
+  properties:
+  - type: DeveloperPortal
+    url: https://developer.ntrs.com/apis
+  - type: Documentation
+    url: https://developer.ntrs.com/get-started
+- aid: northern-trust:event-notification-api
+  name: Northern Trust Event Notification API
+  description: >-
+    The Event Notification service in the Northern Trust API Store lets registered
+    clients subscribe to and receive asynchronous notifications about events
+    across their custody and servicing data — a webhook/event-driven layer that
+    complements the request/response asset-servicing APIs. Subscription and
+    event-notification setup are managed inside the developer portal behind Okta
+    authentication. It is delivered through the enterprise API gateway alongside
+    the other product domains.
+  humanURL: https://developer.ntrs.com/events
+  baseURL: https://apiservices.ntrs.com/ent/v1
+  tags:
+  - United States
+  - Asset Servicing
+  - Event Notifications
+  - Webhooks
+  - Event-Driven
+  properties:
+  - type: DeveloperPortal
+    url: https://developer.ntrs.com/events
+  - type: Documentation
+    url: https://developer.ntrs.com/get-started
+common:
+- type: Website
+  url: https://www.northerntrust.com
+- type: DeveloperPortal
+  url: https://developer.ntrs.com/
+- type: Documentation
+  url: https://developer.ntrs.com/apis
+- type: GettingStarted
+  url: https://developer.ntrs.com/get-started
+- type: SignUp
+  url: https://developer.ntrs.com/get-started
+- type: Support
+  url: https://developer.ntrs.com/contact-us
+- type: TermsOfService
+  url: https://developer.ntrs.com/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://developer.ntrs.com/global-privacy-standards
+- type: Blog
+  url: https://www.northerntrust.com/united-states/insights-research
+- type: GitHubOrganization
+  url: https://github.com/northern-trust
+- type: LinkedIn
+  url: https://www.linkedin.com/company/northern-trust
+- type: DomainSecurity
+  url: security/northern-trust-domain-security.yml
 maintainers:
-  - FN: API Evangelist
-    email: info@apievangelist.com
+- FN: API Evangelist
+  email: info@apievangelist.com

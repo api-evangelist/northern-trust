@@ -1,0 +1,99 @@
+reviewer: API Evangelist
+date: '2026-07-23'
+provider: Northern Trust
+slug: northern-trust
+primary_domain: northerntrust.com
+tier: money-center
+segment: Asset servicing / custody bank (Fortune 500)
+
+developer_portal:
+  url: https://developer.ntrs.com/
+  name: Northern Trust API Store
+  status: live
+  http_status: 200
+  public_browsing: true
+  registration_required: true
+  notes: >-
+    React single-page app. Product domains and marketing pages are publicly
+    browsable; the API catalog, per-API reference, and spec downloads require
+    login. Portal is marked noindex/nofollow and fronted by Akamai bot manager
+    plus mPulse monitoring.
+
+api_products:
+  count: 7
+  source: >-
+    Enumerated from the portal application bundle and public catalog domains
+    (custody, data management, fund accounting, middle office, transfer agency,
+    risk and performance) plus the event-notification service. Per-domain
+    operation-level detail sits behind Okta login.
+  products:
+  - Custody API
+  - Fund Accounting API
+  - Transfer Agency API
+  - Middle Office API
+  - Data Management API
+  - Risk and Performance API
+  - Event Notification API
+
+auth_model:
+  type: OAuth2 / OIDC (authorization code + PKCE)
+  identity_provider: Okta (login.ntrs.com)
+  issuer: https://login.ntrs.com/oauth2/aus1m4yuzpqNFht7o0h8
+  scopes:
+  - openid
+  - profile
+  - email
+  - apo.role
+  api_key: >-
+    Portal also carries a gateway API key header; direct unauthenticated calls
+    to the enterprise gateway were rejected.
+  gateway_base_url: https://apiservices.ntrs.com/ent/v1
+
+spec_availability:
+  downloadable_public: false
+  format: Downloadable in-portal as spec.json (OpenAPI/Swagger) per API group
+  provenance: >-
+    The portal exposes a per-group spec download (route /groups/:id/specs, saves
+    spec.json), but the enterprise gateway rejects unauthenticated and
+    portal-key requests to /ent/v1/bff/products and /ent/v1/* with 401/500. No
+    OpenAPI/Swagger was harvestable without registered Okta credentials.
+  specs_harvested: 0
+
+probes:
+- url: https://developer.ntrs.com/
+  http_status: 200
+- url: https://developer.ntrs.com/apis
+  http_status: 200
+- url: https://developer.ntrs.com/env-config.js
+  http_status: 200
+  finding: Revealed Okta OIDC config + gateway base https://apiservices.ntrs.com/ent/v1
+- url: https://apiservices.ntrs.com/ent/v1/products
+  http_status: 401
+  finding: '{"error":"Unauthorized","code":"3000x"} — bearer token required'
+- url: https://apiservices.ntrs.com/ent/v1/bff/products
+  http_status: 500
+  finding: '{"error":"Invalid API Key"} — portal key insufficient / bot-gated'
+
+open_finance_posture:
+  first_party_api: >-
+    Yes — first-party B2B asset-servicing API program (custody, fund accounting,
+    transfer agency, middle office, data, risk/performance, event notifications).
+    Oriented to institutional/fund clients, not retail consumers.
+  consumer_open_banking: >-
+    No public first-party consumer open-banking / 1033 data-access API. Retail
+    account connectivity is reached indirectly via data aggregators
+    (e.g. Plaid, Tink, TrueLayer) per third-party trackers.
+  fdx_participation: Not publicly documented on the first-party portal.
+  cfpb_1033_posture: Not publicly stated on the first-party portal.
+  aggregator_access: Indirect, aggregator-mediated for consumer accounts.
+
+summary: >-
+  Northern Trust runs a real, live first-party developer program — the Northern
+  Trust API Store at developer.ntrs.com — publishing seven asset-servicing API
+  domains over an enterprise gateway (apiservices.ntrs.com/ent/v1), secured with
+  Okta OIDC (authorization code + PKCE). Product domains are publicly browsable
+  but API reference specs (spec.json) download only after registration; the
+  gateway rejected all unauthenticated probes, so no OpenAPI was harvested. There
+  is no public consumer open-banking/1033 API; retail access is aggregator-only.
+  Represented honestly as a partner/registration surface with humanURL pointers,
+  verified links, and no fabricated specifications.
