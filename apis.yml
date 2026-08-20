@@ -47,6 +47,14 @@ tags:
 - Wealth Management
 - Asset Servicing
 - Asset Management
+- Financial-Services
+- United States
+tags_raw:
+- Fortune 500
+- Banking
+- Wealth Management
+- Asset Servicing
+- Asset Management
 - Financial Services
 - United States
 url: >-
@@ -212,6 +220,12 @@ apis:
   humanURL: https://developer.ntrs.com/events
   baseURL: https://apiservices.ntrs.com/ent/v1
   tags:
+  - United States
+  - Asset Servicing
+  - Event Notifications
+  - Webhook
+  - Event-Driven
+  tags_raw:
   - United States
   - Asset Servicing
   - Event Notifications
