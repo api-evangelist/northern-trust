@@ -1,7 +1,9 @@
 ---
 title: Uncovering Alpha In The Networked Economy
 url: https://www.northerntrust.com/content/dam/northerntrust/pws/nt/documents/asset-management/uncovering-alpha-in-the-networked-economy.pdf
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Northern Trust" press release artificial intelligence'
 position: 4
 source: serpapi-google

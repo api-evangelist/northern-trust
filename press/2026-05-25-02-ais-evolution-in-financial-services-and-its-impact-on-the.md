@@ -1,7 +1,9 @@
 ---
 title: AI's Evolution in Financial Services and Its Impact on the ...
 url: https://www.northerntrust.com/united-states/insights-research/2025/asset-servicing/ai-evolution-financial-services-impact-on-future
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Northern Trust" press release artificial intelligence'
 position: 2
 source: serpapi-google
