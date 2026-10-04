@@ -47,7 +47,7 @@ tags:
 - Wealth Management
 - Asset Servicing
 - Asset Management
-- Financial-Services
+- Financial Services
 - United States
 tags_raw:
 - Fortune 500
@@ -57,6 +57,7 @@ tags_raw:
 - Asset Management
 - Financial Services
 - United States
+- Financial-Services
 url: >-
   https://raw.githubusercontent.com/api-evangelist/northern-trust/refs/heads/main/apis.yml
 created: '2026-03-21'
@@ -197,6 +198,12 @@ apis:
   humanURL: https://developer.ntrs.com/apis
   baseURL: https://apiservices.ntrs.com/ent/v1
   tags:
+  - United States
+  - Asset Servicing
+  - Risk Management
+  - Performance Measurement
+  - Analytics
+  tags_raw:
   - United States
   - Asset Servicing
   - Risk
