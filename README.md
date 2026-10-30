@@ -1,4 +1,4 @@
-# Northern Trust (northern-trust)
+# Northern Trust
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,60 +64,110 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Northern Trust is a Fortune 500 global financial services firm providing asset servicing, asset management, wealth management, and banking to corporations, institutions, family offices, and individuals worldwide. Its first-party developer program, the Northern Trust API Store at [developer.ntrs.com](https://developer.ntrs.com/), exposes asset-servicing capabilities as REST APIs. Product domains are publicly browsable, but API reference specifications and live access sit behind Okta-based OIDC login.
+Northern Trust is a Fortune 500 global financial services firm providing asset servicing, asset management, wealth management, and banking to corporations, institutions, family offices, and individuals worldwide. Its first-party developer program, the Northern Trust API Store at developer.ntrs.com, exposes asset-servicing capabilities as REST APIs across custody, fund accounting, transfer agency, middle office, data management, and risk and performance, plus an event-notification service. The catalog is a partner/registration surface: browsing product domains is public, but API reference specifications (downloadable as spec.json) and live access sit behind Okta-based OIDC login. Northern Trust does not publish a public consumer open-banking API; retail account connectivity is reached indirectly through data aggregators.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/northern-trust/refs/heads/main/apis.yml)
+**Areas:** Fortune 500 · Banking · Wealth Management · Asset Servicing · Asset Management · Financial Services · United States
 
-## Scope
+## Northern Trust on APIs.io
 
-- **Type:** Index
-- **Position:** Producer
-- **Access:** Partner (registration required — Okta OIDC)
+Everything profiled for Northern Trust is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/northern-trust/](https://apis.io/providers/northern-trust/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-- Fortune 500
-- Banking
-- Wealth Management
-- Asset Servicing
-- Asset Management
-- Financial Services
-- United States
+- [Northern Trust Custody API](https://apis.io/apis/northern-trust/custody-api/) — The Custody API in the Northern Trust API Store gives institutional clients programmatic access to global custody data — holdings, positions, safekept…
+- [Northern Trust Fund Accounting API](https://apis.io/apis/northern-trust/fund-accounting-api/) — The Fund Accounting API exposes Northern Trust's fund accounting and net asset value (NAV) servicing data to institutional and fund clients — book of record…
+- [Northern Trust Transfer Agency API](https://apis.io/apis/northern-trust/transfer-agency-api/) — The Transfer Agency API provides programmatic access to Northern Trust's transfer agency servicing — shareholder registers, investor transactions,…
+- [Northern Trust Middle Office API](https://apis.io/apis/northern-trust/middle-office-api/) — The Middle Office API surfaces Northern Trust's whole-office and middle-office outsourcing data — trade lifecycle, post-trade processing, position keeping,…
+- [Northern Trust Data Management API](https://apis.io/apis/northern-trust/data-management-api/) — The Data Management API delivers consolidated investment and reference data from Northern Trust's data services — investment book of record, aggregated…
+- [Northern Trust Risk and Performance API](https://apis.io/apis/northern-trust/risk-and-performance-api/) — The Risk and Performance API exposes Northern Trust's investment risk and performance measurement data — performance returns, attribution, benchmarks, and…
+- [Northern Trust Event Notification API](https://apis.io/apis/northern-trust/event-notification-api/) — The Event Notification service in the Northern Trust API Store lets registered clients subscribe to and receive asynchronous notifications about events…
 
-## APIs
+### Published properties
 
-The Northern Trust API Store publishes a family of asset-servicing APIs over the enterprise gateway (`https://apiservices.ntrs.com/ent/v1`), secured with Okta OIDC (OAuth2 authorization code + PKCE):
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Custody API** — global custody holdings, positions, settlements, safekept assets
-- **Fund Accounting API** — book of record accounting, valuations, NAV datasets
-- **Transfer Agency API** — shareholder registers, subscriptions/redemptions, investor transactions
-- **Middle Office API** — trade lifecycle, post-trade, reconciliation, investment operations
-- **Data Management API** — consolidated investment/reference data, investment book of record
-- **Risk and Performance API** — performance returns, attribution, benchmarks, risk analytics
-- **Event Notification API** — asynchronous event/webhook notifications across servicing data
+#### AsyncAPI (1)
 
-Product domains are publicly browsable; per-API reference specifications (downloadable in-portal as `spec.json`) and live access require registration and Okta login. No OpenAPI/Swagger is publicly downloadable without credentials, so none is harvested here. Northern Trust does not publish a public consumer open-banking / CFPB 1033 API; retail account connectivity is reached indirectly via data aggregators.
+Event-driven and webhook contracts.
 
-## Common Properties
+- [Northern Trust Event Notification Webhooks](https://apis.io/asyncapis/northern-trust/northern-trust-event-notification-webhooks/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Northern Trust Authentication](https://apis.io/security/northern-trust/northern-trust-authentication/)
+- [Northern Trust Domain Security](https://apis.io/security/northern-trust/northern-trust-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Northern Trust Scopes](https://apis.io/scopes/northern-trust/northern-trust-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.northerntrust.com)
-- [Developer Portal](https://developer.ntrs.com/)
-- [Documentation / API Catalog](https://developer.ntrs.com/apis)
-- [Getting Started](https://developer.ntrs.com/get-started)
-- [Support / Contact](https://developer.ntrs.com/contact-us)
-- [Terms of Service](https://developer.ntrs.com/terms-and-conditions)
-- [Privacy](https://developer.ntrs.com/global-privacy-standards)
-- [Blog / Insights](https://www.northerntrust.com/united-states/insights-research)
-- [GitHub Organization](https://github.com/northern-trust)
-- [LinkedIn](https://www.linkedin.com/company/northern-trust)
+- [Documentation](https://developer.ntrs.com/apis)
+- [Getting started](https://developer.ntrs.com/get-started)
+- [Sign up](https://developer.ntrs.com/get-started)
+- [Support](https://developer.ntrs.com/contact-us)
+- [Blog](https://www.northerntrust.com/united-states/insights-research)
+- [Terms of service](https://developer.ntrs.com/terms-and-conditions)
+- [Privacy policy](https://developer.ntrs.com/global-privacy-standards)
+- [GitHub](https://github.com/northern-trust)
 
-## Timestamps
+## API Evangelist rating
 
-- **Created:** 2026-03-21
-- **Modified:** 2026-07-23
+**Kin Score 25.4** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 13.1 |
+| Access clarity | 0.0 |
 
-**FN:** API Evangelist
+**Agent readiness 32.4** — agent-ready
 
-**Email:** info@apievangelist.com
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 31.5** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/northern-trust/](https://apis.io/providers/northern-trust/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Northern Trust: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/northern-trust/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
